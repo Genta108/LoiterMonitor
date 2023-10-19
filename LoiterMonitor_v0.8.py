@@ -93,5 +93,5 @@ print(df_locomotion)
 df_locomotion.to_csv(setting_dict['subject']+'_'+setting_dict['day']+'_loiter_'+setting_dict['parts']+'.csv')
 
 if vgene_sw:
-    mip.plot_check(coords_x, coords_y, ap, vp, video_path[0], area_xy, setting_dict['subject'], locomotion_param['loc_interval'], dict_iteration, video_output)
+    plst.area_checker(coords_x, coords_y, ap, vp, video_path[0], area_xy, setting_dict['subject'], locomotion_param['loc_interval'], dict_iteration, video_output)
 
