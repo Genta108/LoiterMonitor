@@ -1,0 +1,9 @@
+,allrange,center,water dispenser,cornar ul,cornar ur,cornar ll,cornar lr
+upperleft_x,130,310,460,130,760,130,760
+upperleft_y,100,280,100,100,100,730,730
+upperright_x,940,760,610,310,940,310,940
+upperright_y,100,280,100,100,100,730,730
+lowerright_x,940,760,610,310,940,310,940
+lowerright_y,910,730,280,280,280,910,910
+lowerleft_x,130,310,460,130,760,130,760
+lowerleft_y,910,730,280,280,280,910,910
