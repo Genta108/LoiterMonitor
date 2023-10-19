@@ -29,16 +29,12 @@ setting_dict = {
     'fix_num': '100',
     'model_group': 'GroupDeva',
     'model_subject': 'D1',
-    'csvoffset': '1'
+    'csvoffset': '1' #header offset; fixed coordination file: 1, raw coordination file: 3
 }
 
-
-home = os.path.expanduser("~")
-data_path = '/Dropbox/B03_PopEco/Rat/rattipot/2nd/'+setting_dict['group']+'/'+setting_dict['day']+'/'
+data_path = '/Dropbox/B03_PopEco/Rat/rattipot/2nd/'+setting_dict['group']+'/'+setting_dict['day']+'/'  #path to data folder from home folder
 video_path = glob.glob('/Volumes/Extreme SSD/rat_society/hakataya2023/'+setting_dict['group']+'_'+setting_dict['day']+'*.mp4')
-#video_path = glob.glob('/mnt/data_complex/syncbox/rat_analysis/'+setting_dict['group']+'/'+setting_dict['day']+'/'+setting_dict['group']+'*.mp4')
 video_output = 'video/'
-#video_output = '/mnt/data_complex/syncbox/rat_analysis/'+setting_dict['group']+'/'+setting_dict['day']+'/Video/'
 
 locomotion_param = {
     'loc_lim': 1000,    #locomotion (mm) per second
@@ -60,6 +56,7 @@ coords_columns=['frame', 'nose_x', 'nose_y', 'nose_likeli', 'head_x', 'head_y', 
 ############
 
 #change current directory
+home = os.path.expanduser("~") #path to home folder
 os.chdir(home+data_path)
 
 
@@ -84,7 +81,6 @@ df_locomotion, dict_iteration = mip.locomotion_calc(coords_x, coords_y, frame_ma
 #entry&staying area calcuration
 entry, staying_time, itr_entry, itr_staying = mip.entry_calc(coords_x, coords_y, ap, area_path, frame_max, fps)
 
-#
 for i, col in enumerate(ap.columns):
     df_locomotion['entry to '+col] = entry[i]
     dict_iteration['itr_entry_'+col] = itr_entry[i]
@@ -99,31 +95,3 @@ df_locomotion.to_csv(setting_dict['subject']+'_'+setting_dict['day']+'_loiter_'+
 if vgene_sw:
     mip.plot_check(coords_x, coords_y, ap, vp, video_path[0], area_xy, setting_dict['subject'], locomotion_param['loc_interval'], dict_iteration, video_output)
 
-
-
-
-#以下、そのうちGUIにする用
-'''
-if __name__ == "__main__":
-    #Main window
-    main = tk.Tk()
-    main.title("LoiterMonitor v0.8")
-    main.geometory("1280x800")
-
-    #Tab
-    nb = ttk.Notebook(main) #tab instance
-    tab1 = tk.Frame(nb)
-    tab2 = tk.Frame(nb)
-    nb.add(tab1, text='1st Tab', padding=4)
-    nb.add(tab2, text='2nd Tab', padding=4)
-    lbl1 = tk.Label(master=tab1, text='here is tab1')
-    lbl2 = tk.Label(master=tab2, text='here is tab2')
-
-    nb.pack(expand=1, fill='both')
-    lbl1.pack()
-    lbl2.pack()
-
-    btn = tk.Button()
-
-    main.mainloop()
-'''
