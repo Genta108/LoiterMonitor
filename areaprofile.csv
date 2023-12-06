@@ -1,9 +1,5 @@
-,allrange,center,water dispenser,cornar ul,cornar ur,cornar ll,cornar lr
-upperleft_x,130,310,460,130,760,130,760
-upperleft_y,100,280,100,100,100,730,730
-upperright_x,940,760,610,310,940,310,940
-upperright_y,100,280,100,100,100,730,730
-lowerright_x,940,760,610,310,940,310,940
-lowerright_y,910,730,280,280,280,910,910
-lowerleft_x,130,310,460,130,760,130,760
-lowerleft_y,910,730,280,280,280,910,910
+,,area 1,,,,,,,,area 2,,,,,,,,area 3,,,,,,,
+,,upper left,,upper right,,bottom right,,bottom left,,upper left,,upper right,,bottom right,,bottom left,,upper left,,upper right,,bottom right,,bottom left,
+video_file,px/mm,x,y,x,y,x,y,x,y,x,y,x,y,x,y,x,y,x,y,x,y,x,y,x,y
+GroupDeva_Day01,9.3458,85,55,985,55,985,955,85,955,310,280,760,280,760,730,310,730,385,55,685,55,685,280,385,280
+GroupDeva_Day02,9.3458,85,55,985,55,985,955,85,955,310,280,760,280,760,730,310,730,385,55,685,55,685,280,385,280
